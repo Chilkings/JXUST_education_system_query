@@ -1,10 +1,8 @@
-# SHST
+# JXUST教务系统api
 
-```
-SHST/Python 目录下为Python版本的API
-SHST/PHP 目录下为PHP版本的API
-SHST/Java 目录下为Java版本的API 
-```
+适用于江西理工大学教务系统，代码功能已在2020-6-15测试通过，不保证以后系统升级导致无法使用。
+
+本人主要用于查询同班同学成绩。
 
 ## Python
 
@@ -12,9 +10,9 @@ SHST/Java 目录下为Java版本的API
 # Python/SW.py
 
 # 配置信息
-account = ""                              # 账号
+account = ""                              # 学号
 password = ""                             # 密码
-url = "http://jwgl.sdust.edu.cn/app.do"   # ${学校教务系统}/app.do
+url = "http://jw.jxust.edu.cn//app.do"   # ${学校教务系统}/app.do
 
 # 代码末尾注释的方法 取消注释测试执行
 Q.get_student_info()                      # 获取学生信息
@@ -22,47 +20,8 @@ Q.get_current_time()                      # 获取学年信息
 Q.get_class_info()                        # 当前周次课表
 Q.get_class_info(3)                       # 指定周次课表
 Q.get_classroom_info("0102")              # 空教室查询 "allday"：全天 "am"：上午 "pm"：下午 "night"：晚上 "0102":1.2节空教室 "0304":3.4节空教室
-Q.get_grade_info("2018-2019-1")           # 成绩查询 # 无参数查询全部成绩
+Q.get_grade_info("2018-2019-1",14201xxxxx)           # 成绩查询 # 无参数查询全部成绩 #传入他人学号可查询他人成绩，不输入默认查询account账号的成绩
 Q.get_exam_info()                         # 获取考试信息
-```
-
-## PHP
-```php
-// PHP/Main.php
-
-// 配置信息
-$accountSW = "";                            // 账号
-$passwordSW = "";                           // 密码
-$urlSW = "http://jwgl.sdust.edu.cn/app.do"; // ${学校教务系统}/app.do
-
-// 代码末尾注释的方法 取消注释测试执行
-$Q -> getStudentInfo();                     // 获取学生信息
-$Q -> getCurrentTime();                     // 获取学年信息
-$Q -> getTable();                           // 当前周次课表
-$Q -> getTable(3);                          // 指定周次课表
-$Q -> getGrade("2018-2019-2");              // 成绩查询 // 无参数查询全部成绩
-$Q -> getClassroom("0102");                 // 空教室查询 "allday"：全天 "am"：上午 "pm"：下午 "night"：晚上 "0102":1.2节空教室 "0304":3.4节空教室
-$Q -> getExam();                            // 获取考试信息
-```
-
-## Java
-```java
-// Java/MainSw.java
-
-// 配置信息
-private String account = "";                            // 账号
-private String password = "";                           // 密码
-private String url = "http://jwgl.sdust.edu.cn/app.do"; // ${学校教务系统}/app.do
-
-// 代码末尾注释的方法 取消注释测试执行
-Q.getStudentInfo().exec();                              // 获取学生信息
-Q.getCurrentTime().exec();                              // 获取学年信息
-Q.getTable().exec();                                    // 当前周次课表
-Q.getTable().setWeek("3").exec();                       // 指定周次课表
-Q.getGrade().exec();                                    // 查询全部成绩
-Q.getGrade().setTerm("2018-2019-2").exec();             // 查询指定学期成绩
-Q.getClassroom("0102").exec();                          // 空教室查询 "allday"：全天 "am"：上午 "pm"：下午 "night"：晚上 "0102":1.2节空教室 "0304":3.4节空教室
-Q.getExamInfo().exec();                                 // 获取考试信息
 ```
 
 ## Notice
