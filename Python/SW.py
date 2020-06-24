@@ -91,8 +91,6 @@ class SW(object):
         print(req.text)
 
     def get_grade_info(self,sy = "",xh = ""):
-        if xh is not None:
-            self.account = xh
         params={
         "method" : "getCjcx",
         "xh" : self.account,
@@ -106,8 +104,6 @@ class SW(object):
                 print("%s  %s   %d   %s" % (x['xm'],str(x['zcj']),x['xf'],x['kcmc']))
         else : 
             print("空")
-        if xh is not None:
-            self.account = account
 
     def get_exam_info(self):
         params={
@@ -127,11 +123,11 @@ if __name__ == '__main__':
     # Q.get_class_info() #当前周次课表
     # Q.get_class_info(3) #指定周次课表
     # Q.get_classroom_info("0102") #空教室查询 "allday"：全天 "am"：上午 "pm"：下午 "night"：晚上 "0102":1.2节空教室 "0304":3.4节空教室
-    # Q.get_grade_info("2019-2020-2")  # 成绩查询 # 无参数查询全部成绩 #传入他人学号可查询他人成绩，不输入默认查询account账号的成绩
+    # Q.get_grade_info("2019-2020-2","242018xxxx") # 成绩查询 # 传入参数为学年以及一卡通号
     # Q.get_exam_info() #获取考试信息
 
     #一次性查询本班的成绩
-    # for i in range(1420xxxxxx,1420xxxxxx):
-    #      Q.get_grade_info("2019-2020-2")
+    # for i in range(242018xxxx,242018xxxx):
+    #      Q.get_grade_info("2019-2020-2",i)
 
 
