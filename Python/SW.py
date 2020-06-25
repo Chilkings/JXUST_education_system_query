@@ -93,7 +93,7 @@ class SW(object):
     def get_grade_info(self,sy = "",xh = ""):
         params={
         "method" : "getCjcx",
-        "xh" : self.account,
+        "xh" : xh,
         "xnxqid" : sy
         }
         req = self.get_handle(params)
